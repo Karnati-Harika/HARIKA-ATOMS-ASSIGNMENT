@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta name="viewport" width="width-device" initial-scale="1.0">
+        <style>
+            * {
+  box-sizing: border-box;
+}
+body {
+   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f0;
+  background-size: cover;
+}
+            .contact {
+      background: #e6e6e6;
+      padding: 20px;
+      margin: 20px;
+      border: 1px solid #ccc;
+    }
+    .contact h2 {
+      text-align: center;
+    }
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #999;
+    }
+
+        </style>
+    </head>
+    <body>
+          <div class="contact">
+    <h2>Contact Us / Feedback</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Your email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" rows="5" placeholder="Your feedback or message"></textarea>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+    </body>
+</html>

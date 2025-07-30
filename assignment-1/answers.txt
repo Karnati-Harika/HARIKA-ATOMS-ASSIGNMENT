@@ -1,0 +1,68 @@
+1)Hyper text markup language
+2)<h1>
+3)<br>
+4)Href
+5)<a href=”https://example.com”>Example</a>
+6)Alt
+7)<textarea>
+8)<section>
+9)To create navigate links
+10)<article>
+11)Content aside from main content(side bar)
+12)<fieldset>
+13)<!--this is comment-- >
+14)
+15)<div> is block-level,<span > inline
+
+section b
+
+
+16)<header>
+17)<footer>
+18)<figcaption>
+19)3
+20)<tr>
+21)<iframe>
+22)id
+23)Class  attribute
+24)<body>
+25)<head>
+
+section c
+
+26)True
+27)flase
+28)True
+29)Flase
+30)true
+31)true
+32)true
+33)flase
+34)flase
+35)true
+
+section d
+
+36) schematic and non scemantic elements
+  semantic elements:clearly descrides meaning 
+ex:  <article>,<footer>,<section>
+non semantic elements : tells nothing about its content
+<div>,<span>
+37)5 html semantic elements
+<header>--- introduction content
+<nav>--- to provides navigation links
+<article> -- self-contained text
+<section>----   group related content
+<footer> --- contains footer information
+38)better structure
+easier to understand
+39)<section> --  grouping of content
+ <article>----- self contained text
+<div> it is a container with no semantic meaning
+40) <figure> --- provides image
+<figcaption> --- provides caption of the image
+
+
+
+
+

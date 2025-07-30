@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cartoon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      background: url('assets/cartooon.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .header {
+      margin: 20px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 1;
+      text-align: center;
+      padding: 16%;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px;
+    }
+
+    .side {
+      flex: 1;
+      min-width: 250px;
+      background-color: #14b084fb;
+      padding: 20px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .main {
+      flex: 2;
+      min-width: 300px;
+      background-color: rgba(241, 240, 240, 0.971);
+      padding: 20px;
+      border: 1px solid black;
+    }
+
+    .gallery {
+      padding: 40px 20px;
+      background: #d9d4d4f7;
+      margin: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .gallery h2 {
+      text-align: center;
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .gallery p {
+      text-align: center;
+      color: #222;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #222;
+    }
+
+    .card img {
+      width: 80%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #333;
+      background-color: #fff;
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+      transform: scale(0.9);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card:hover img {
+      transform: scale(1);
+      box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover p {
+      color: #14b084;
+      text-decoration: underline;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .facts {
+      background-color: #45a086fb;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .facts ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    .footer {
+      padding: 5px;
+      text-align: center;
+      background: #9d6b6b;
+
+    }
+
+    @media screen and (max-width: 700px) {
+      .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="background:black;padding:5px;">
+    <h1 style="text-align:center; color:white; font-size: 36px; letter-spacing: 2px;">CARTOON CHARACTERS</h1>
+  </div>
+
+  <div class="header">
+    <h2>WELCOME TO WEBSITE</h2>
+    <p>This is the website with a flexible layout.</p>
+  </div>
+
+  <div class="row">
+    <div class="side">
+      <h2>About Characters</h2>
+      <img src="assets/cartoon1.jpeg" style="width:100%">
+      <p>This image shows all characters of the cartoon...</p>
+      <h3>More Text</h3>
+      <div class="facts">
+        <h2>Fun Facts About Doraemon</h2>
+        <ul>
+          <li>Doraemon hates mice because they chewed off his ears.</li>
+          <li>The bell on his collar is actually a time communication device.</li>
+          <li>Doraemon's favorite food is dorayaki (red bean pancake).</li>
+          <li>Nobita is terrible at studies but great at shooting and string figures!</li>
+          <li>Shizuka loves playing the violin – although not very well!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main">
+      <h2>DESCRIPTION ABOUT CARTOON</h2>
+      <p>This is the website about the characters involved in the cartoon Doraemon. Doraemon first appeared in 1969 and has since become a cultural icon in Japan and many other countries. The series follows Doraemon, an earless robotic cat from the 22nd century, who travels back in time to assist Nobita Nobi, a kind-hearted but lazy and unlucky boy. Doraemon uses various futuristic gadgets from his four-dimensional pocket to help Nobita solve problems, although their adventures often lead to humorous and unexpected outcomes.</p>
+      <p>The manga spawned a media franchise. Three anime TV series have been adapted in 1973, 1979, and 2005. Additionally, Shin-Ei Animation has produced over forty animated films, including two 3D computer-animated films, all of which are distributed by Toho. Various types of merchandise and media have been developed, including soundtrack albums, video games, and musicals. The manga series was licensed for an English language release in North America via Amazon Kindle. The anime series was licensed by Disney for an English-language release in North America in 2014, and LUK International in Europe, the Middle East and Africa.</p>
+      <p>Doraemon was well received by critics and became a hit in many Asian countries. It won numerous awards and sold over 300 million copies worldwide. The character of Doraemon was appointed as the first "anime ambassador" by Japan's Foreign Ministry in 2008.</p>
+      <h2>IMAGE</h2>
+      <img src="assets/cartoon.jpg" style="margin-left:15%; width:70%;">
+      <p>This is the basic information of the cartoon.</p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <h2>Character Gallery</h2>
+    <p>If you want to know more about the cartoon characters, click the images below.</p>
+    <div class="grid">
+      <div class="card">
+        <a href="https://en.wikipedia.org/wiki/Doraemon" target="_blank">
+          <img src="assets/dore.jpg" alt="Doraemon">
+          <p>Doraemon</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://en.wikipedia.org/wiki/Nobita_Nobi" target="_blank">
+          <img src="assets/Nobita nobi.jpg" alt="Nobita">
+          <p>Nobita</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://anibase.net/en/character/46EBQ/Shizuka-Minamoto" target="_blank">
+          <img src="assets/susuka.jpg" alt="Shizuka">
+          <p>Shizuka</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://doraemon.fandom.com/wiki/Suneo_Honekawa" target="_blank">
+          <img src="assets/sunio.jpg" alt="Suneo">
+          <p>Suneo</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://doraemon.fandom.com/wiki/Takeshi_Gouda" target="_blank">
+          <img src="assets/gian.jpg" alt="Gian">
+          <p>Gian</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin: 20px;">
+    <a href="https://www.proprofs.com/quiz-school/story.php?title=doraemon-quiz_1" target="_blank">
+      <button style="padding: 10px 20px; font-size: 18px; background-color: #64254f; color: white; border-color:rgb(52, 182, 143); border-radius: 20px;">
+        🎮 Take the Doraemon Quiz!
+      </button>
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>&copy;2025 Copyrights Reserved to Harika Karnati</p>
+    <p><a href="dore.html" style="color:rgb(217, 208, 208);">Contact/Feedback</a></p>
+  </div>
+</body>
+</html>

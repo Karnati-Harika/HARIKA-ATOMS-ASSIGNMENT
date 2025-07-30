@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS Garment Machines</title>
+  <link rel="icon" href="LOGO.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #111c26;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .left-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 60px;
+      margin-right: 15px;
+    }
+
+    .site-title h1 {
+      font-size: 1.3rem;
+      color: #f26522;
+    }
+
+    .site-title p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f26522;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #222;
+      min-width: 200px;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      background: #222;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact .icon {
+      font-size: 24px;
+      color: #f26522;
+    }
+
+    .contact-info span {
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    .heading {
+      text-align: center;
+      background: url('juki1.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .about-flex-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 6px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-text h2 {
+  color: #f26522;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.about-text p {
+  margin: 15px 0;
+}
+
+.about-text ul {
+  list-style: none;
+  margin: 15px 0;
+  padding-left: 0;
+}
+
+.about-text li {
+  margin-bottom: 10px;
+}
+
+.about-text li::before {
+  content: "✔";
+  color: #f26522;
+  margin-right: 10px;
+}
+    .features h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .feature-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .feature {
+      background: white;
+      padding: 20px;
+      flex: 1 1 200px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    .stats-section {
+      background: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .stats-section .box {
+      display: inline-block;
+      background: #f26522;
+      color: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .vision-mission {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 0;
+      gap: 20px;
+    }
+
+    .vision-mission div {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-left: 5px solid #f26522;
+      font-size: 0.95rem;
+    }
+
+    .team-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .team-section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .team-section p {
+      color: #f26522;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .main-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .main-section h2 {
+      color: #f26522;
+      margin-bottom: 20px;
+    }
+
+    .main-section p {
+      line-height: 1.8;
+    }
+
+    .core-values {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .value-box {
+      flex: 1 1 200px;
+      background: white;
+      padding: 20px;
+      border-left: 4px solid #f26522;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      background-color: #f26522;
+      color: white;
+      padding: 30px 0;
+    }
+
+    .stats div {
+      text-align: center;
+    }
+
+    .vision-mission {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    .vision, .mission {
+      width: 45%;
+    }
+
+    .team-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      width: 180px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member img {
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .team-member h4 {
+      margin: 10px 0 5px;
+      color: #f26522;
+    }
+
+
+   footer {
+      background-color: #111c26;
+      color: #ccc;
+      padding: 40px 20px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-grid div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-grid h4 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .footer-grid p, .footer-grid a {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="left-section">
+    <img src="logo.png" alt="JS Garment Machines Logo" class="logo-img">
+    <div class="site-title">
+      <h1>JS Garment Machines</h1>
+      <p>The Complete Garment Machine Solution</p>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#">HOME</a>
+    <a href="#">ABOUT</a>
+    <div class="dropdown">
+      <a href="#">PRODUCTS</a>
+      <div class="dropdown-content">
+        <a href="#">Cutting Machines</a>
+        <a href="#">Fusing Machines</a>
+        <a href="#">Thread Trimmers</a>
+        <a href="#">Steam Iron Table</a>
+        <a href="#">View All Products</a>
+      </div>
+    </div>
+    <a href="#">BRANDS</a>
+    <a href="#">GALLERY</a>
+    <a href="#">CONTACT</a>
+  </nav>
+
+  <div class="contact">
+    <div class="icon">💬</div>
+    <div class="contact-info">
+      <p><strong>+91 9133779556</strong></p>
+      <span>Have any Questions?</span>
+    </div>
+  </div>
+</header>
+
+<div class="heading">About Us</div>
+
+<div class="about-flex-section">
+  <div class="about-image">
+    <img src="brand.png" alt="Company Front View">
+  </div>
+  <div class="about-text">
+    <h2>Who We Are</h2>
+    <h3>An Ultimate Garment Machines Brand In <span style="color:#111c26;">Market Since 2013</span></h3>
+    <p>JS Garment Machines is a leading importer & supplier of Cutting-Edge Solutions in the field of Garment Machinery, dedicated to empowering the Garment, Apparel, Leather, and Home Textile industries. Established in 2013 with a vision to revolutionize the manufacturing process.</p>
+    <ul>
+      <li>We assess your current machinery needs and recommend solutions</li>
+      <li>Our experts provide dedicated service to keep your machines running smoothly</li>
+      <li>We offer regular maintenance checks to ensure optimal performance</li>
+    </ul>
+    <button style="background:#f26522;color:white;border:none;padding:10px 20px;margin-top:10px;border-radius:5px;">Contact Us</button>
+  </div>
+</div>
+
+
+ <!-- Core Values -->
+  <section class="main-section">
+    <h2>Let's Experience <strong>Exclusive Quality</strong></h2>
+    <div class="core-values">
+      <div class="value-box">
+        <h4>Innovation</h4>
+        <p>We continuously innovate to stay ahead of industry standards and deliver advanced features.</p>
+      </div>
+      <div class="value-box">
+        <h4>Quality</h4>
+        <p>Our products are built with quality craftsmanship for long-lasting performance.</p>
+      </div>
+      <div class="value-box">
+        <h4>Customer Satisfaction</h4>
+        <p>We ensure customer delight through seamless service and support.</p>
+      </div>
+      <div class="value-box">
+        <h4>Sustainability</h4>
+        <p>We follow environmentally responsible practices for sustainable manufacturing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div><h2>50+</h2><p>Types of Garment Machines</p></div>
+    <div><h2>11+</h2><p>Authorised Brands</p></div>
+    <div><h2>20K+</h2><p>Happy Clients Worldwide</p></div>
+  </div>
+
+  <!-- Vision & Mission -->
+  <div class="vision-mission">
+    <div class="vision">
+      <h3>🔶 Vision</h3>
+      <p>To revolutionize the garment machinery industry with smart, sustainable and reliable machines. We aim to elevate quality, increase productivity, and build long-term partnerships through innovation and trust.</p>
+    </div>
+    <div class="mission">
+      <h3>🔶 Mission</h3>
+      <p>To provide the best-in-class machinery solutions that maximize performance and customer satisfaction through detail, efficient service, and innovative design.</p>
+    </div>
+  </div>
+
+  <!-- Team -->
+  <section class="team-section">
+    <h2>Meet The Visionaries <strong>Behind Our Success</strong></h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="krishna.jpg.png" alt="Krishna Reddy">
+        <h4>Krishna Reddy</h4>
+        <p>Managing Director</p>
+      </div>
+      <div class="team-member">
+        <img src="vanisri.jpg.png" alt="Varshi">
+        <h4>Varshi</h4>
+        <p>Co-Founder</p>
+      </div>
+    </div>
+  </section>
+   <footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Get Free Estimate</h4>
+      <p><strong>+91 9133779556</strong></p>
+      <p>Contact us for a personalized quotation.</p>
+      <a href="#" style="color:#f26522;">CONTACT NOW</a>
+    </div>
+    <div>
+      <h4>Products</h4>
+      <p>Cutting Machines</p>
+      <p>Sewing Machines</p>
+      <p>Embroidery Machines</p>
+      <p>Ironing Solutions</p>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p>26-1-28/2, BRTS Main Road, Vijayawada</p>
+      <p>Email: jsgmhub@gmail.com</p>
+    </div>
+    <div>
+      <h4>Locate Us</h4>
+      <iframe src="https://www.google.com/maps/embed?..." width="100%" height="120" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 JS Garment Machines. Website by Atoms Digital Solutions.</p>
+  </div>
+</footer>
+
+</body>
+</html>

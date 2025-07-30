@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shinchan Cartoon Website</title>
+  <link rel="icon" href="shinchan-icon.png" type="image/png">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffdf9;
+       width:100%;
+      color: #333;
+    }
+
+    .intro {
+      height: 100vh;
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .intro h1 {
+      font-size: 3em;
+      color: #ff6f61;
+      margin-bottom: 20px;
+    }
+
+    .scroll-down {
+      font-size: 2em;
+      color: #ff6f61;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(12px);
+      }
+    }
+
+    marquee {
+      background: #d21840;
+      color: white;
+      font-size: 18px;
+      padding: 10px;
+      font-weight: 600;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff9a9e, #fad0c4, #ffecd2, #fcb69f);
+      padding: 25px 10px;
+      text-align: center;
+      color: #2d2d2d;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3em;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+    }
+
+    nav {
+      background: #ff6f61;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffeddb;
+    }
+
+    .hero {
+      background: url('shinchan-bg.jpg') no-repeat center center;
+      background-size: cover;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .hero h2 {
+      font-size: 3.4em;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px 25px;
+      border-radius: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 60px 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.5em;
+      color: #ff6f61;
+    }
+
+    .card .short-desc {
+      padding: 0 10px 10px;
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    .card button {
+      background: #ff6f61;
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      margin-bottom: 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: all 0.3s ease;
+    }
+
+    .card button:hover {
+      background: #e4574f;
+      transform: scale(1.05);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 35px;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 18px;
+      text-align: center;
+      animation: slideIn 0.4s ease;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 15px;
+      color: #ff6f61;
+    }
+
+    .popup-content p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .popup-content button {
+      background: #ff6f61;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 1em;
+    }
+
+    .popup-content button:hover {
+      background: #e4574f;
+    }
+
+    footer {
+      background: linear-gradient(to right, #ff758c, #ff7eb3);
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 1em;
+      margin-top: 50px;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Welcome to Shinchan's World!</h1>
+    <div class="scroll-down" onclick="document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });">
+      ↓ Scroll to Explore ↓
+    </div>
+  </div>
+
+  
+  <div id="main-content">
+    <marquee>🎈 Welcome to the World of Shinchan & Friends! Enjoy Exploring! 🎈</marquee>
+
+    <header>
+      <h1>Welcome to Shinchan World</h1>
+    </header>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#characters">Characters</a>
+      <a href="epi.html">Episodes</a>
+      <a href="ab.html">About</a>
+    </nav>
+
+    <section class="hero">
+      <h2>Join the fun with Shinchan & Friends!</h2>
+    </section>
+
+    <section class="gallery" id="characters">
+      <div class="card">
+        <img src="shinchan.jpeg" alt="Shinchan">
+        <h3>Shinchan Nohara</h3>
+        <p class="short-desc">The naughty, cheeky boy who makes everyone laugh.</p>
+        <button onclick="showDescription('Shinchan', 'A mischievous 5-year-old known for his funny antics and adorable dance moves.')">More</button>
+      </div>
+
+      <div class="card">
+        <img src="himawari.jpg" alt="Himawari">
+        <h3>Himawari Nohara</h3>
+        <p class="short-desc">Shinchan's glitter-loving baby sister.</p>
+        <button onclick="showDescription('Himawari', 'Shinchan\'s cute baby sister who loves jewelry and shines brighter than the sun!')">More</button>
+      </div>
+
+      <div class="card">
+        <img src="misae.jpeg" alt="Misae">
+        <h3>Misae Nohara</h3>
+        <p class="short-desc">The strong, patient mom with no-nonsense rules.</p>
+        <button onclick="showDescription('Misae', 'Shinchan\'s mom, the queen of the household, always dealing with her son\'s mischief!')">More</button>
+      </div>
+
+      <div class="card">
+        <img src="hiroshi.jpeg" alt="Hiroshi">
+        <h3>Hiroshi Nohara</h3>
+        <p class="short-desc">A loving dad with a love for snacks and sleep.</p>
+        <button onclick="showDescription('Hiroshi', 'Shinchan\'s hardworking dad who loves beer and suffers from foot odor!')">More</button>
+      </div>
+
+      <div class="card">
+        <img src="bochan.jpeg" alt="Bochan">
+        <h3>Bochan</h3>
+        <p class="short-desc">Slow speaker, deep thinker, Shinchan's loyal buddy.</p>
+        <button onclick="showDescription('Bochan', 'Shinchan\'s loyal friend, known for his nasal voice and slow speech.')">More</button>
+      </div>
+
+      <div class="card">
+        <img src="kazama.jpeg" alt="Kazama">
+        <h3>Kazama</h3>
+        <p class="short-desc">The nerdy best friend, always in control (except when Shinchan’s around).</p>
+        <button onclick="showDescription('Kazama', 'The smart and serious classmate of Shinchan who gets annoyed by him often.')">More</button>
+      </div>
+    </section>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <h3 id="char-name"></h3>
+        <p id="char-desc"></p>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 Shinchan Fan Website | Designed with ❤️ for cartoon lovers</p>
+    </footer>
+  </div>
+
+  <script>
+    function showDescription(name, description) {
+      document.getElementById('char-name').innerText = name;
+      document.getElementById('char-desc').innerText = description;
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
